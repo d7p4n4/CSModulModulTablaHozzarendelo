@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSModulModulTablaHozzarendelo"
         mc:Ignorable="d"
-        Title="CSModulModulTablaHozzarendelo" Height="300" Width="529">
+        Title="CSModulModulTablaHozzarendelo" Height="350" Width="529">
     
         <Grid>
             <ListBox x:Name="lbOne" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown"
-                 HorizontalAlignment="Left" Margin="12,29,0,12" Width="215" 
+                 HorizontalAlignment="Left" Margin="12,29,0,50" Width="215" 
                  ScrollViewer.VerticalScrollBarVisibility="Visible" />
             <ListBox x:Name="lbTwo" Drop="ListBox_Drop" AllowDrop="True"
-                 HorizontalAlignment="Right" Margin="0,29,12,12" Width="215" 
+                 HorizontalAlignment="Right" Margin="0,29,12,50" Width="215" 
                  ScrollViewer.VerticalScrollBarVisibility="Visible"/>
-            <TextBlock Height="21" Text="ListBox One" HorizontalAlignment="Left" 
+            <TextBlock Height="21" Text="Tábla" HorizontalAlignment="Left" 
                    Margin="12,2,0,0" VerticalAlignment="Top" Width="120" />
-            <TextBlock Height="21" Text="ListBox Two" HorizontalAlignment="Right" 
+            <TextBlock Height="21" Text="Modul táblája" HorizontalAlignment="Right" 
                    Margin="0,2,107,0" VerticalAlignment="Top" Width="120" />
-        </Grid>
+        <ComboBox x:Name="cBox" Margin="12,275,12,12"></ComboBox>
+        <Button Click="Upload" Height="22" Width="50">Feltöltés!</Button>
+    </Grid>
 </Window>
