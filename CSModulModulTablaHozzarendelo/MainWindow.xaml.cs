@@ -1,18 +1,15 @@
-﻿using System;
+﻿
+using CSLibAc4yObjectDBCap;
+using CSLibAc4yObjectObjectService;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CSModulModulTablaHozzarendelo
 {
@@ -22,14 +19,23 @@ namespace CSModulModulTablaHozzarendelo
     public partial class MainWindow : Window
     {
         ObservableCollection<string> zoneList = new ObservableCollection<string>();
+        List<Ac4yObjectHome> Ac4yObjectHomeList = new List<Ac4yObjectHome>();
+        SqlConnection conn = new SqlConnection("Data Source=80.211.241.82;Integrated Security=False;uid=root;pwd=Sycompla9999*;Initial Catalog=ModulDb;");
         ListBox dragSource = null;
 
         public MainWindow()
         {
             InitializeComponent();
-            foreach (TimeZoneInfo tzi in TimeZoneInfo.GetSystemTimeZones())
+            conn.Open();
+            ListInstanceByNameResponse listInstanceByNameResponse =
+                new Ac4yObjectObjectService(conn).ListInstanceByName(
+                    new ListInstanceByNameRequest() { TemplateName = "Tábla" }
+                );
+
+            Ac4yObjectHomeList = listInstanceByNameResponse.Ac4yObjectHomeList;
+            foreach (Ac4yObjectHome home in Ac4yObjectHomeList)
             {
-                zoneList.Add(tzi.ToString());
+                zoneList.Add(home.HumanId);
             }
             lbOne.ItemsSource = zoneList;
         }
