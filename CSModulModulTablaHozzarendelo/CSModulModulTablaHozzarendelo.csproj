@@ -49,11 +49,11 @@
     </Reference>
     <Reference Include="CSLibAc4yObjectDBCap, Version=1.2019.1128.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Library\c#\CSLibAc4yObjectDBCap.dll</HintPath>
+      <HintPath>..\..\..\ac4y\CSLibAc4yObjectDBCap\CSLibAc4yObjectDBCap\bin\Debug\netstandard2\CSLibAc4yObjectDBCap.dll</HintPath>
     </Reference>
     <Reference Include="CSLibAc4yObjectObjectService, Version=1.2019.1128.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Library\c#\CSLibAc4yObjectObjectService.dll</HintPath>
+      <HintPath>..\..\..\ac4y\CSLibAc4yObjectObjectService\CSLibAc4yObjectObjectService\bin\Debug\netstandard2\CSLibAc4yObjectObjectService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
